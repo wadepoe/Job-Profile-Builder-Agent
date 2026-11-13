@@ -1,0 +1,21 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: sap-sf-ec-position-management-mcp-server
+  description: Exposes SAP SuccessFactors Position Management API as MCP tools for reading position data to enrich job profiles
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.edmx
+
+provides:
+  apis:
+    - name: sap-sf-ec-position-management-mcp-server
+      kind: mcp-server
+      ordId: customer.build:apiResource:job-profile-builder-a798b.sap-sf-ec-position-management-mcp-server:v1
+
+requires:
+  - name: ECPositionManagement
+    kind: api
+    ordId: sap.sf:apiResource:ECPositionManagement:v1

@@ -1,0 +1,21 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: sap-sf-ec-skills-management-mcp-server
+  description: Exposes SAP SuccessFactors Skills Management API as MCP tools for reading skills and competency data for job profile sections
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.edmx
+
+provides:
+  apis:
+    - name: sap-sf-ec-skills-management-mcp-server
+      kind: mcp-server
+      ordId: customer.build:apiResource:job-profile-builder-a798b.sap-sf-ec-skills-management-mcp-server:v1
+
+requires:
+  - name: ECSkillsManagement
+    kind: api
+    ordId: sap.sf:apiResource:ECSkillsManagement:v1

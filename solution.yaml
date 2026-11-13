@@ -1,0 +1,14 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: job-profile-builder-a798b
+  version: "1.0.0"
+  description: AI agent that automates SAP SuccessFactors Job Profile Builder profile creation from any source input, eliminating manual data entry and accelerating talent acquisition
+
+assets:
+  - ref: ./assets/job-profile-builder-agent/asset.yaml
+  - ref: ./assets/sap-sf-plt-generic-objects-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-ec-position-management-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-ec-skills-management-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-rcm-job-requisition-mcp-server/asset.yaml

@@ -1,0 +1,51 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: job-profile-builder-agent
+  description: AI agent that automates SAP SuccessFactors Job Profile Builder profile creation from any source input, reducing manual effort from 30+ minutes to under 2 minutes per profile
+
+type: agent
+
+provides:
+  apis:
+    - name: job-profile-builder-agent
+      kind: a2a
+      ordId: customer.build:apiResource:job-profile-builder-a798b.job-profile-builder-agent:v1
+
+container:
+  buildPath: .
+  port: 5000
+
+requires:
+  - name: sap-sf-plt-generic-objects-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:job-profile-builder-a798b.sap-sf-plt-generic-objects-mcp-server:v1
+  - name: sap-sf-ec-position-management-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:job-profile-builder-a798b.sap-sf-ec-position-management-mcp-server:v1
+  - name: sap-sf-ec-skills-management-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:job-profile-builder-a798b.sap-sf-ec-skills-management-mcp-server:v1
+  - name: sap-sf-rcm-job-requisition-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:job-profile-builder-a798b.sap-sf-rcm-job-requisition-mcp-server:v1
+
+probes:
+  startup:
+    path: /.well-known/agent.json
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 18
+  liveness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readiness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3

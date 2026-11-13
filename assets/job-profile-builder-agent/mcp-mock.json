@@ -1,0 +1,933 @@
+{
+  "servers": {
+    "sap-sf-plt-generic-objects": {
+      "mcp_server_name": "sap.mcp/sfodata",
+      "description": "MCP server for the sfodata service.",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "batch_for_sfodata": {
+          "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_mdfenumvalue_for_sfodata": {
+          "description": "Retrieve a list of entities from the MDFEnumValue collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "create_mdfenumvalue_for_sfodata": {
+          "description": "Create a new instance of the MDFEnumValue EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "update_mdfenumvalue_for_sfodata": {
+          "description": "Update an entity in MDFEnumValue EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "get_mdfenumvalue_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the MDFEnumValue collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "list_mdflocalizedvalue_for_sfodata": {
+          "description": "Retrieve a list of entities from the MDFLocalizedValue collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "create_mdflocalizedvalue_for_sfodata": {
+          "description": "Create a new instance of the MDFLocalizedValue EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "update_mdflocalizedvalue_for_sfodata": {
+          "description": "Update an entity in MDFLocalizedValue EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "get_mdflocalizedvalue_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the MDFLocalizedValue collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        }
+      }
+    },
+    "sap-sf-ec-position-management": {
+      "mcp_server_name": "sap.mcp/sfodata",
+      "description": "MCP server for the sfodata service.",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "batch_for_sfodata": {
+          "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_positionentity_for_sfodata": {
+          "description": "Retrieve a list of entities from the PositionEntity collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "get_positionentity_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the PositionEntity collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "count_positionentity_for_sfodata": {
+          "description": "Get the total count of entities in the PositionEntity collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_positionrequisitionstatus_for_sfodata": {
+          "description": "Retrieve a list of entities from the PositionRequisitionStatus collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "get_positionrequisitionstatus_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the PositionRequisitionStatus collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "count_positionrequisitionstatus_for_sfodata": {
+          "description": "Get the total count of entities in the PositionRequisitionStatus collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_positionmatrixrelationship_for_sfodata": {
+          "description": "Retrieve a list of entities from the PositionMatrixRelationship collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "get_positionmatrixrelationship_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the PositionMatrixRelationship collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        }
+      }
+    },
+    "sap-sf-ec-skills-management": {
+      "mcp_server_name": "sap.mcp/sfodata",
+      "description": "MCP server for the sfodata service.",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "batch_for_sfodata": {
+          "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_competencytype_for_sfodata": {
+          "description": "Retrieve a list of entities from the CompetencyType collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "get_competencytype_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the CompetencyType collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "count_competencytype_for_sfodata": {
+          "description": "Get the total count of entities in the CompetencyType collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_skillentity_for_sfodata": {
+          "description": "Retrieve a list of entities from the SkillEntity collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "get_skillentity_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the SkillEntity collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "count_skillentity_for_sfodata": {
+          "description": "Get the total count of entities in the SkillEntity collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_skillcontent_for_sfodata": {
+          "description": "Retrieve a list of entities from the SkillContent collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "get_skillcontent_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the SkillContent collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "count_skillcontent_for_sfodata": {
+          "description": "Get the total count of entities in the SkillContent collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_skillprofile_for_sfodata": {
+          "description": "Retrieve a list of entities from the SkillProfile collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sap-sf-rcm-job-requisition": {
+      "mcp_server_name": "sap.mcp/sfodata",
+      "description": "MCP server for the sfodata service.",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "batch_for_sfodata": {
+          "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_jobrequisitionlocale_for_sfodata": {
+          "description": "Retrieve a list of entities from the JobRequisitionLocale collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "create_jobrequisitionlocale_for_sfodata": {
+          "description": "Create a new instance of the JobRequisitionLocale EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "update_jobrequisitionlocale_for_sfodata": {
+          "description": "Update an entity in JobRequisitionLocale EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "delete_jobrequisitionlocale_for_sfodata": {
+          "description": "Delete an entity from JobRequisitionLocale EntitySet in the sfodata service.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "get_jobrequisitionlocale_for_sfodata": {
+          "description": "Retrieve a single entity by its key from the JobRequisitionLocale collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "count_jobrequisitionlocale_for_sfodata": {
+          "description": "Get the total count of entities in the JobRequisitionLocale collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "list_jobrequisitiongroupoperator_for_sfodata": {
+          "description": "Retrieve a list of entities from the JobRequisitionGroupOperator collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        },
+        "create_jobrequisitiongroupoperator_for_sfodata": {
+          "description": "Create a new instance of the JobRequisitionGroupOperator EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "update_jobrequisitiongroupoperator_for_sfodata": {
+          "description": "Update an entity in JobRequisitionGroupOperator EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "externalCode": "JPB-001",
+            "jobTitle": "Senior Software Engineer",
+            "jobFamily": "Technology",
+            "jobLevel": "P4",
+            "status": "active",
+            "createdDate": "/Date(1744588800000)/"
+          }
+        },
+        "delete_jobrequisitiongroupoperator_for_sfodata": {
+          "description": "Delete an entity from JobRequisitionGroupOperator EntitySet in the sfodata service.",
+          "input_schema": {
+            "type": "object",
+            "properties": {}
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "JPB-001",
+                "jobTitle": "Senior Software Engineer",
+                "jobFamily": "Technology",
+                "jobLevel": "P4",
+                "status": "active"
+              },
+              {
+                "externalCode": "JPB-002",
+                "jobTitle": "HR Business Partner",
+                "jobFamily": "Human Resources",
+                "jobLevel": "M2",
+                "status": "active"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "job-profile-builder-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 4,
+    "total_tools": 44,
+    "generated_from": [
+      "assets/sap-sf-plt-generic-objects-mcp-server/mcp-translation/translation.json",
+      "assets/sap-sf-ec-position-management-mcp-server/mcp-translation/translation.json",
+      "assets/sap-sf-ec-skills-management-mcp-server/mcp-translation/translation.json",
+      "assets/sap-sf-rcm-job-requisition-mcp-server/mcp-translation/translation.json"
+    ],
+    "generation_date": "2026-11-12"
+  }
+}

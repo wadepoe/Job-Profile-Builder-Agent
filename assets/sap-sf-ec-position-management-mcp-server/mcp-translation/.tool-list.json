@@ -1,0 +1,5428 @@
+[
+  {
+    "name": "get_metadata_sfodata",
+    "title": "get_metadata_sfodata",
+    "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+    "odataType": {
+      "metadataRequest": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "batch_for_sfodata",
+    "title": "batch_for_sfodata",
+    "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+    "odataType": {
+      "batchRequest": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "list_positionentity_for_sfodata",
+    "title": "list_PositionEntity_for_sfodata",
+    "description": "Retrieve a list of entities from the PositionEntity collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "inlinecount"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positionentity_for_sfodata",
+    "title": "create_PositionEntity_for_sfodata",
+    "description": "Create a new instance of the PositionEntity EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "crudOperation": "create",
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "jobCode",
+            "newParameterName": "jobcode"
+          },
+          {
+            "name": "position",
+            "newParameterName": "position"
+          },
+          {
+            "name": "status",
+            "newParameterName": "status"
+          },
+          {
+            "name": "subModule",
+            "newParameterName": "submodule"
+          },
+          {
+            "name": "positionCompetencyMappings",
+            "newParameterName": "positioncompetencymappings"
+          },
+          {
+            "name": "positionNav",
+            "newParameterName": "positionnav"
+          },
+          {
+            "name": "positionSkillMappings",
+            "newParameterName": "positionskillmappings"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "update_positionentity_for_sfodata",
+    "title": "update_PositionEntity_for_sfodata",
+    "description": "Update an entity in PositionEntity EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "crudOperation": "update",
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "jobCode",
+            "newParameterName": "jobcode"
+          },
+          {
+            "name": "position",
+            "newParameterName": "position"
+          },
+          {
+            "name": "status",
+            "newParameterName": "status"
+          },
+          {
+            "name": "subModule",
+            "newParameterName": "submodule"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "delete_positionentity_for_sfodata",
+    "title": "delete_PositionEntity_for_sfodata",
+    "description": "Delete an entity from PositionEntity EntitySet in the sfodata service.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "crudOperation": "delete",
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "get_positionentity_for_sfodata",
+    "title": "get_PositionEntity_for_sfodata",
+    "description": "Retrieve a single entity by its key from the PositionEntity collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_positionentity_for_sfodata",
+    "title": "count_PositionEntity_for_sfodata",
+    "description": "Get the total count of entities in the PositionEntity collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_positionrequisitionstatus_for_sfodata",
+    "title": "list_PositionRequisitionStatus_for_sfodata",
+    "description": "Retrieve a list of entities from the PositionRequisitionStatus collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionRequisitionStatus",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "inlinecount"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positionrequisitionstatus_for_sfodata",
+    "title": "create_PositionRequisitionStatus_for_sfodata",
+    "description": "Create a new instance of the PositionRequisitionStatus EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionRequisitionStatus",
+        "crudOperation": "create",
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "positionId",
+            "newParameterName": "positionid"
+          },
+          {
+            "name": "processingStatus",
+            "newParameterName": "processingstatus"
+          },
+          {
+            "name": "requisitionId",
+            "newParameterName": "requisitionid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "update_positionrequisitionstatus_for_sfodata",
+    "title": "update_PositionRequisitionStatus_for_sfodata",
+    "description": "Update an entity in PositionRequisitionStatus EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionRequisitionStatus",
+        "crudOperation": "update",
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "positionId",
+            "newParameterName": "positionid"
+          },
+          {
+            "name": "processingStatus",
+            "newParameterName": "processingstatus"
+          },
+          {
+            "name": "requisitionId",
+            "newParameterName": "requisitionid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "delete_positionrequisitionstatus_for_sfodata",
+    "title": "delete_PositionRequisitionStatus_for_sfodata",
+    "description": "Delete an entity from PositionRequisitionStatus EntitySet in the sfodata service.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionRequisitionStatus",
+        "crudOperation": "delete",
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "get_positionrequisitionstatus_for_sfodata",
+    "title": "get_PositionRequisitionStatus_for_sfodata",
+    "description": "Retrieve a single entity by its key from the PositionRequisitionStatus collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionRequisitionStatus",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_positionrequisitionstatus_for_sfodata",
+    "title": "count_PositionRequisitionStatus_for_sfodata",
+    "description": "Get the total count of entities in the PositionRequisitionStatus collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionRequisitionStatus",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_positionmatrixrelationship_for_sfodata",
+    "title": "list_PositionMatrixRelationship_for_sfodata",
+    "description": "Retrieve a list of entities from the PositionMatrixRelationship collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "inlinecount"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positionmatrixrelationship_for_sfodata",
+    "title": "create_PositionMatrixRelationship_for_sfodata",
+    "description": "Create a new instance of the PositionMatrixRelationship EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "crudOperation": "create",
+        "parameters": [
+          {
+            "name": "Position_code",
+            "newParameterName": "position_code"
+          },
+          {
+            "name": "Position_effectiveStartDate",
+            "newParameterName": "position_effectivestartdate"
+          },
+          {
+            "name": "matrixRelationshipType",
+            "newParameterName": "matrixrelationshiptype"
+          },
+          {
+            "name": "relatedPosition",
+            "newParameterName": "relatedposition"
+          },
+          {
+            "name": "relatedPositionNav",
+            "newParameterName": "relatedpositionnav"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "update_positionmatrixrelationship_for_sfodata",
+    "title": "update_PositionMatrixRelationship_for_sfodata",
+    "description": "Update an entity in PositionMatrixRelationship EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "crudOperation": "update",
+        "parameters": [
+          {
+            "name": "Position_code",
+            "newParameterName": "position_code"
+          },
+          {
+            "name": "Position_effectiveStartDate",
+            "newParameterName": "position_effectivestartdate"
+          },
+          {
+            "name": "matrixRelationshipType",
+            "newParameterName": "matrixrelationshiptype"
+          },
+          {
+            "name": "relatedPosition",
+            "newParameterName": "relatedposition"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "delete_positionmatrixrelationship_for_sfodata",
+    "title": "delete_PositionMatrixRelationship_for_sfodata",
+    "description": "Delete an entity from PositionMatrixRelationship EntitySet in the sfodata service.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "crudOperation": "delete",
+        "parameters": [
+          {
+            "name": "Position_code",
+            "newParameterName": "position_code"
+          },
+          {
+            "name": "Position_effectiveStartDate",
+            "newParameterName": "position_effectivestartdate"
+          },
+          {
+            "name": "matrixRelationshipType",
+            "newParameterName": "matrixrelationshiptype"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "get_positionmatrixrelationship_for_sfodata",
+    "title": "get_PositionMatrixRelationship_for_sfodata",
+    "description": "Retrieve a single entity by its key from the PositionMatrixRelationship collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "Position_code",
+            "newParameterName": "position_code"
+          },
+          {
+            "name": "Position_effectiveStartDate",
+            "newParameterName": "position_effectivestartdate"
+          },
+          {
+            "name": "matrixRelationshipType",
+            "newParameterName": "matrixrelationshiptype"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_positionmatrixrelationship_for_sfodata",
+    "title": "count_PositionMatrixRelationship_for_sfodata",
+    "description": "Get the total count of entities in the PositionMatrixRelationship collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_positioncompetencymappingentity_for_sfodata",
+    "title": "list_PositionCompetencyMappingEntity_for_sfodata",
+    "description": "Retrieve a list of entities from the PositionCompetencyMappingEntity collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionCompetencyMappingEntity",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "inlinecount"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positioncompetencymappingentity_for_sfodata",
+    "title": "create_PositionCompetencyMappingEntity_for_sfodata",
+    "description": "Create a new instance of the PositionCompetencyMappingEntity EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionCompetencyMappingEntity",
+        "crudOperation": "create",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "competency",
+            "newParameterName": "competency"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "rating_de_DE",
+            "newParameterName": "rating_de_de"
+          },
+          {
+            "name": "rating_defaultValue",
+            "newParameterName": "rating_defaultvalue"
+          },
+          {
+            "name": "rating_en_GB",
+            "newParameterName": "rating_en_gb"
+          },
+          {
+            "name": "rating_en_US",
+            "newParameterName": "rating_en_us"
+          },
+          {
+            "name": "rating_es_ES",
+            "newParameterName": "rating_es_es"
+          },
+          {
+            "name": "rating_fr_FR",
+            "newParameterName": "rating_fr_fr"
+          },
+          {
+            "name": "rating_ja_JP",
+            "newParameterName": "rating_ja_jp"
+          },
+          {
+            "name": "rating_ko_KR",
+            "newParameterName": "rating_ko_kr"
+          },
+          {
+            "name": "rating_localized",
+            "newParameterName": "rating_localized"
+          },
+          {
+            "name": "rating_nl_NL",
+            "newParameterName": "rating_nl_nl"
+          },
+          {
+            "name": "rating_pt_BR",
+            "newParameterName": "rating_pt_br"
+          },
+          {
+            "name": "rating_pt_PT",
+            "newParameterName": "rating_pt_pt"
+          },
+          {
+            "name": "rating_ru_RU",
+            "newParameterName": "rating_ru_ru"
+          },
+          {
+            "name": "rating_zh_CN",
+            "newParameterName": "rating_zh_cn"
+          },
+          {
+            "name": "rating_zh_TW",
+            "newParameterName": "rating_zh_tw"
+          },
+          {
+            "name": "status",
+            "newParameterName": "status"
+          },
+          {
+            "name": "subModule",
+            "newParameterName": "submodule"
+          },
+          {
+            "name": "weight_de_DE",
+            "newParameterName": "weight_de_de"
+          },
+          {
+            "name": "weight_defaultValue",
+            "newParameterName": "weight_defaultvalue"
+          },
+          {
+            "name": "weight_en_GB",
+            "newParameterName": "weight_en_gb"
+          },
+          {
+            "name": "weight_en_US",
+            "newParameterName": "weight_en_us"
+          },
+          {
+            "name": "weight_es_ES",
+            "newParameterName": "weight_es_es"
+          },
+          {
+            "name": "weight_fr_FR",
+            "newParameterName": "weight_fr_fr"
+          },
+          {
+            "name": "weight_ja_JP",
+            "newParameterName": "weight_ja_jp"
+          },
+          {
+            "name": "weight_ko_KR",
+            "newParameterName": "weight_ko_kr"
+          },
+          {
+            "name": "weight_localized",
+            "newParameterName": "weight_localized"
+          },
+          {
+            "name": "weight_nl_NL",
+            "newParameterName": "weight_nl_nl"
+          },
+          {
+            "name": "weight_pt_BR",
+            "newParameterName": "weight_pt_br"
+          },
+          {
+            "name": "weight_pt_PT",
+            "newParameterName": "weight_pt_pt"
+          },
+          {
+            "name": "weight_ru_RU",
+            "newParameterName": "weight_ru_ru"
+          },
+          {
+            "name": "weight_zh_CN",
+            "newParameterName": "weight_zh_cn"
+          },
+          {
+            "name": "weight_zh_TW",
+            "newParameterName": "weight_zh_tw"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "update_positioncompetencymappingentity_for_sfodata",
+    "title": "update_PositionCompetencyMappingEntity_for_sfodata",
+    "description": "Update an entity in PositionCompetencyMappingEntity EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionCompetencyMappingEntity",
+        "crudOperation": "update",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "competency",
+            "newParameterName": "competency"
+          },
+          {
+            "name": "rating_de_DE",
+            "newParameterName": "rating_de_de"
+          },
+          {
+            "name": "rating_defaultValue",
+            "newParameterName": "rating_defaultvalue"
+          },
+          {
+            "name": "rating_en_GB",
+            "newParameterName": "rating_en_gb"
+          },
+          {
+            "name": "rating_en_US",
+            "newParameterName": "rating_en_us"
+          },
+          {
+            "name": "rating_es_ES",
+            "newParameterName": "rating_es_es"
+          },
+          {
+            "name": "rating_fr_FR",
+            "newParameterName": "rating_fr_fr"
+          },
+          {
+            "name": "rating_ja_JP",
+            "newParameterName": "rating_ja_jp"
+          },
+          {
+            "name": "rating_ko_KR",
+            "newParameterName": "rating_ko_kr"
+          },
+          {
+            "name": "rating_localized",
+            "newParameterName": "rating_localized"
+          },
+          {
+            "name": "rating_nl_NL",
+            "newParameterName": "rating_nl_nl"
+          },
+          {
+            "name": "rating_pt_BR",
+            "newParameterName": "rating_pt_br"
+          },
+          {
+            "name": "rating_pt_PT",
+            "newParameterName": "rating_pt_pt"
+          },
+          {
+            "name": "rating_ru_RU",
+            "newParameterName": "rating_ru_ru"
+          },
+          {
+            "name": "rating_zh_CN",
+            "newParameterName": "rating_zh_cn"
+          },
+          {
+            "name": "rating_zh_TW",
+            "newParameterName": "rating_zh_tw"
+          },
+          {
+            "name": "status",
+            "newParameterName": "status"
+          },
+          {
+            "name": "subModule",
+            "newParameterName": "submodule"
+          },
+          {
+            "name": "weight_de_DE",
+            "newParameterName": "weight_de_de"
+          },
+          {
+            "name": "weight_defaultValue",
+            "newParameterName": "weight_defaultvalue"
+          },
+          {
+            "name": "weight_en_GB",
+            "newParameterName": "weight_en_gb"
+          },
+          {
+            "name": "weight_en_US",
+            "newParameterName": "weight_en_us"
+          },
+          {
+            "name": "weight_es_ES",
+            "newParameterName": "weight_es_es"
+          },
+          {
+            "name": "weight_fr_FR",
+            "newParameterName": "weight_fr_fr"
+          },
+          {
+            "name": "weight_ja_JP",
+            "newParameterName": "weight_ja_jp"
+          },
+          {
+            "name": "weight_ko_KR",
+            "newParameterName": "weight_ko_kr"
+          },
+          {
+            "name": "weight_localized",
+            "newParameterName": "weight_localized"
+          },
+          {
+            "name": "weight_nl_NL",
+            "newParameterName": "weight_nl_nl"
+          },
+          {
+            "name": "weight_pt_BR",
+            "newParameterName": "weight_pt_br"
+          },
+          {
+            "name": "weight_pt_PT",
+            "newParameterName": "weight_pt_pt"
+          },
+          {
+            "name": "weight_ru_RU",
+            "newParameterName": "weight_ru_ru"
+          },
+          {
+            "name": "weight_zh_CN",
+            "newParameterName": "weight_zh_cn"
+          },
+          {
+            "name": "weight_zh_TW",
+            "newParameterName": "weight_zh_tw"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "delete_positioncompetencymappingentity_for_sfodata",
+    "title": "delete_PositionCompetencyMappingEntity_for_sfodata",
+    "description": "Delete an entity from PositionCompetencyMappingEntity EntitySet in the sfodata service.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionCompetencyMappingEntity",
+        "crudOperation": "delete",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "get_positioncompetencymappingentity_for_sfodata",
+    "title": "get_PositionCompetencyMappingEntity_for_sfodata",
+    "description": "Retrieve a single entity by its key from the PositionCompetencyMappingEntity collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionCompetencyMappingEntity",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_positioncompetencymappingentity_for_sfodata",
+    "title": "count_PositionCompetencyMappingEntity_for_sfodata",
+    "description": "Get the total count of entities in the PositionCompetencyMappingEntity collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionCompetencyMappingEntity",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_position_for_sfodata",
+    "title": "list_Position_for_sfodata",
+    "description": "Retrieve a list of entities from the Position collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "inlinecount"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_position_for_sfodata",
+    "title": "create_Position_for_sfodata",
+    "description": "Create a new instance of the Position EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "crudOperation": "create",
+        "parameters": [
+          {
+            "name": "businessUnit",
+            "newParameterName": "businessunit"
+          },
+          {
+            "name": "changeReason",
+            "newParameterName": "changereason"
+          },
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "comment",
+            "newParameterName": "comment"
+          },
+          {
+            "name": "company",
+            "newParameterName": "company"
+          },
+          {
+            "name": "costCenter",
+            "newParameterName": "costcenter"
+          },
+          {
+            "name": "department",
+            "newParameterName": "department"
+          },
+          {
+            "name": "description",
+            "newParameterName": "description"
+          },
+          {
+            "name": "division",
+            "newParameterName": "division"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          },
+          {
+            "name": "effectiveStatus",
+            "newParameterName": "effectivestatus"
+          },
+          {
+            "name": "employeeClass",
+            "newParameterName": "employeeclass"
+          },
+          {
+            "name": "externalName_de_DE",
+            "newParameterName": "externalname_de_de"
+          },
+          {
+            "name": "externalName_defaultValue",
+            "newParameterName": "externalname_defaultvalue"
+          },
+          {
+            "name": "externalName_en_GB",
+            "newParameterName": "externalname_en_gb"
+          },
+          {
+            "name": "externalName_en_US",
+            "newParameterName": "externalname_en_us"
+          },
+          {
+            "name": "externalName_es_ES",
+            "newParameterName": "externalname_es_es"
+          },
+          {
+            "name": "externalName_fr_FR",
+            "newParameterName": "externalname_fr_fr"
+          },
+          {
+            "name": "externalName_ja_JP",
+            "newParameterName": "externalname_ja_jp"
+          },
+          {
+            "name": "externalName_ko_KR",
+            "newParameterName": "externalname_ko_kr"
+          },
+          {
+            "name": "externalName_localized",
+            "newParameterName": "externalname_localized"
+          },
+          {
+            "name": "externalName_nl_NL",
+            "newParameterName": "externalname_nl_nl"
+          },
+          {
+            "name": "externalName_pt_BR",
+            "newParameterName": "externalname_pt_br"
+          },
+          {
+            "name": "externalName_pt_PT",
+            "newParameterName": "externalname_pt_pt"
+          },
+          {
+            "name": "externalName_ru_RU",
+            "newParameterName": "externalname_ru_ru"
+          },
+          {
+            "name": "externalName_zh_CN",
+            "newParameterName": "externalname_zh_cn"
+          },
+          {
+            "name": "externalName_zh_TW",
+            "newParameterName": "externalname_zh_tw"
+          },
+          {
+            "name": "incumbent",
+            "newParameterName": "incumbent"
+          },
+          {
+            "name": "jobCode",
+            "newParameterName": "jobcode"
+          },
+          {
+            "name": "jobLevel",
+            "newParameterName": "joblevel"
+          },
+          {
+            "name": "jobTitle",
+            "newParameterName": "jobtitle"
+          },
+          {
+            "name": "location",
+            "newParameterName": "location"
+          },
+          {
+            "name": "mdfSystemOptimisticLockUUID",
+            "newParameterName": "mdfsystemoptimisticlockuuid"
+          },
+          {
+            "name": "multipleIncumbentsAllowed",
+            "newParameterName": "multipleincumbentsallowed"
+          },
+          {
+            "name": "payGrade",
+            "newParameterName": "paygrade"
+          },
+          {
+            "name": "positionCriticality",
+            "newParameterName": "positioncriticality"
+          },
+          {
+            "name": "positionTitle",
+            "newParameterName": "positiontitle"
+          },
+          {
+            "name": "regularTemporary",
+            "newParameterName": "regulartemporary"
+          },
+          {
+            "name": "targetFTE",
+            "newParameterName": "targetfte"
+          },
+          {
+            "name": "type",
+            "newParameterName": "type"
+          },
+          {
+            "name": "vacant",
+            "newParameterName": "vacant"
+          },
+          {
+            "name": "parentPosition",
+            "newParameterName": "parentposition"
+          },
+          {
+            "name": "positionMatrixRelationship",
+            "newParameterName": "positionmatrixrelationship"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "update_position_for_sfodata",
+    "title": "update_Position_for_sfodata",
+    "description": "Update an entity in Position EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "crudOperation": "update",
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          },
+          {
+            "name": "businessUnit",
+            "newParameterName": "businessunit"
+          },
+          {
+            "name": "changeReason",
+            "newParameterName": "changereason"
+          },
+          {
+            "name": "comment",
+            "newParameterName": "comment"
+          },
+          {
+            "name": "company",
+            "newParameterName": "company"
+          },
+          {
+            "name": "costCenter",
+            "newParameterName": "costcenter"
+          },
+          {
+            "name": "department",
+            "newParameterName": "department"
+          },
+          {
+            "name": "description",
+            "newParameterName": "description"
+          },
+          {
+            "name": "division",
+            "newParameterName": "division"
+          },
+          {
+            "name": "effectiveStatus",
+            "newParameterName": "effectivestatus"
+          },
+          {
+            "name": "employeeClass",
+            "newParameterName": "employeeclass"
+          },
+          {
+            "name": "externalName_de_DE",
+            "newParameterName": "externalname_de_de"
+          },
+          {
+            "name": "externalName_defaultValue",
+            "newParameterName": "externalname_defaultvalue"
+          },
+          {
+            "name": "externalName_en_GB",
+            "newParameterName": "externalname_en_gb"
+          },
+          {
+            "name": "externalName_en_US",
+            "newParameterName": "externalname_en_us"
+          },
+          {
+            "name": "externalName_es_ES",
+            "newParameterName": "externalname_es_es"
+          },
+          {
+            "name": "externalName_fr_FR",
+            "newParameterName": "externalname_fr_fr"
+          },
+          {
+            "name": "externalName_ja_JP",
+            "newParameterName": "externalname_ja_jp"
+          },
+          {
+            "name": "externalName_ko_KR",
+            "newParameterName": "externalname_ko_kr"
+          },
+          {
+            "name": "externalName_localized",
+            "newParameterName": "externalname_localized"
+          },
+          {
+            "name": "externalName_nl_NL",
+            "newParameterName": "externalname_nl_nl"
+          },
+          {
+            "name": "externalName_pt_BR",
+            "newParameterName": "externalname_pt_br"
+          },
+          {
+            "name": "externalName_pt_PT",
+            "newParameterName": "externalname_pt_pt"
+          },
+          {
+            "name": "externalName_ru_RU",
+            "newParameterName": "externalname_ru_ru"
+          },
+          {
+            "name": "externalName_zh_CN",
+            "newParameterName": "externalname_zh_cn"
+          },
+          {
+            "name": "externalName_zh_TW",
+            "newParameterName": "externalname_zh_tw"
+          },
+          {
+            "name": "incumbent",
+            "newParameterName": "incumbent"
+          },
+          {
+            "name": "jobCode",
+            "newParameterName": "jobcode"
+          },
+          {
+            "name": "jobLevel",
+            "newParameterName": "joblevel"
+          },
+          {
+            "name": "jobTitle",
+            "newParameterName": "jobtitle"
+          },
+          {
+            "name": "location",
+            "newParameterName": "location"
+          },
+          {
+            "name": "mdfSystemOptimisticLockUUID",
+            "newParameterName": "mdfsystemoptimisticlockuuid"
+          },
+          {
+            "name": "multipleIncumbentsAllowed",
+            "newParameterName": "multipleincumbentsallowed"
+          },
+          {
+            "name": "payGrade",
+            "newParameterName": "paygrade"
+          },
+          {
+            "name": "positionCriticality",
+            "newParameterName": "positioncriticality"
+          },
+          {
+            "name": "positionTitle",
+            "newParameterName": "positiontitle"
+          },
+          {
+            "name": "regularTemporary",
+            "newParameterName": "regulartemporary"
+          },
+          {
+            "name": "targetFTE",
+            "newParameterName": "targetfte"
+          },
+          {
+            "name": "type",
+            "newParameterName": "type"
+          },
+          {
+            "name": "vacant",
+            "newParameterName": "vacant"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "delete_position_for_sfodata",
+    "title": "delete_Position_for_sfodata",
+    "description": "Delete an entity from Position EntitySet in the sfodata service.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "crudOperation": "delete",
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "get_position_for_sfodata",
+    "title": "get_Position_for_sfodata",
+    "description": "Retrieve a single entity by its key from the Position collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_position_for_sfodata",
+    "title": "count_Position_for_sfodata",
+    "description": "Get the total count of entities in the Position collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_positionskillmappingentity_for_sfodata",
+    "title": "list_PositionSkillMappingEntity_for_sfodata",
+    "description": "Retrieve a list of entities from the PositionSkillMappingEntity collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionSkillMappingEntity",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "inlinecount"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positionskillmappingentity_for_sfodata",
+    "title": "create_PositionSkillMappingEntity_for_sfodata",
+    "description": "Create a new instance of the PositionSkillMappingEntity EntitySet in the sfodata service. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionSkillMappingEntity",
+        "crudOperation": "create",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "proLevel_de_DE",
+            "newParameterName": "prolevel_de_de"
+          },
+          {
+            "name": "proLevel_defaultValue",
+            "newParameterName": "prolevel_defaultvalue"
+          },
+          {
+            "name": "proLevel_en_GB",
+            "newParameterName": "prolevel_en_gb"
+          },
+          {
+            "name": "proLevel_en_US",
+            "newParameterName": "prolevel_en_us"
+          },
+          {
+            "name": "proLevel_es_ES",
+            "newParameterName": "prolevel_es_es"
+          },
+          {
+            "name": "proLevel_fr_FR",
+            "newParameterName": "prolevel_fr_fr"
+          },
+          {
+            "name": "proLevel_ja_JP",
+            "newParameterName": "prolevel_ja_jp"
+          },
+          {
+            "name": "proLevel_ko_KR",
+            "newParameterName": "prolevel_ko_kr"
+          },
+          {
+            "name": "proLevel_localized",
+            "newParameterName": "prolevel_localized"
+          },
+          {
+            "name": "proLevel_nl_NL",
+            "newParameterName": "prolevel_nl_nl"
+          },
+          {
+            "name": "proLevel_pt_BR",
+            "newParameterName": "prolevel_pt_br"
+          },
+          {
+            "name": "proLevel_pt_PT",
+            "newParameterName": "prolevel_pt_pt"
+          },
+          {
+            "name": "proLevel_ru_RU",
+            "newParameterName": "prolevel_ru_ru"
+          },
+          {
+            "name": "proLevel_zh_CN",
+            "newParameterName": "prolevel_zh_cn"
+          },
+          {
+            "name": "proLevel_zh_TW",
+            "newParameterName": "prolevel_zh_tw"
+          },
+          {
+            "name": "skill",
+            "newParameterName": "skill"
+          },
+          {
+            "name": "status",
+            "newParameterName": "status"
+          },
+          {
+            "name": "subModule",
+            "newParameterName": "submodule"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "update_positionskillmappingentity_for_sfodata",
+    "title": "update_PositionSkillMappingEntity_for_sfodata",
+    "description": "Update an entity in PositionSkillMappingEntity EntitySet in the sfodata service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionSkillMappingEntity",
+        "crudOperation": "update",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "proLevel_de_DE",
+            "newParameterName": "prolevel_de_de"
+          },
+          {
+            "name": "proLevel_defaultValue",
+            "newParameterName": "prolevel_defaultvalue"
+          },
+          {
+            "name": "proLevel_en_GB",
+            "newParameterName": "prolevel_en_gb"
+          },
+          {
+            "name": "proLevel_en_US",
+            "newParameterName": "prolevel_en_us"
+          },
+          {
+            "name": "proLevel_es_ES",
+            "newParameterName": "prolevel_es_es"
+          },
+          {
+            "name": "proLevel_fr_FR",
+            "newParameterName": "prolevel_fr_fr"
+          },
+          {
+            "name": "proLevel_ja_JP",
+            "newParameterName": "prolevel_ja_jp"
+          },
+          {
+            "name": "proLevel_ko_KR",
+            "newParameterName": "prolevel_ko_kr"
+          },
+          {
+            "name": "proLevel_localized",
+            "newParameterName": "prolevel_localized"
+          },
+          {
+            "name": "proLevel_nl_NL",
+            "newParameterName": "prolevel_nl_nl"
+          },
+          {
+            "name": "proLevel_pt_BR",
+            "newParameterName": "prolevel_pt_br"
+          },
+          {
+            "name": "proLevel_pt_PT",
+            "newParameterName": "prolevel_pt_pt"
+          },
+          {
+            "name": "proLevel_ru_RU",
+            "newParameterName": "prolevel_ru_ru"
+          },
+          {
+            "name": "proLevel_zh_CN",
+            "newParameterName": "prolevel_zh_cn"
+          },
+          {
+            "name": "proLevel_zh_TW",
+            "newParameterName": "prolevel_zh_tw"
+          },
+          {
+            "name": "skill",
+            "newParameterName": "skill"
+          },
+          {
+            "name": "status",
+            "newParameterName": "status"
+          },
+          {
+            "name": "subModule",
+            "newParameterName": "submodule"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "delete_positionskillmappingentity_for_sfodata",
+    "title": "delete_PositionSkillMappingEntity_for_sfodata",
+    "description": "Delete an entity from PositionSkillMappingEntity EntitySet in the sfodata service.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionSkillMappingEntity",
+        "crudOperation": "delete",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "get_positionskillmappingentity_for_sfodata",
+    "title": "get_PositionSkillMappingEntity_for_sfodata",
+    "description": "Retrieve a single entity by its key from the PositionSkillMappingEntity collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionSkillMappingEntity",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "PositionEntity_externalCode",
+            "newParameterName": "positionentity_externalcode"
+          },
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_positionskillmappingentity_for_sfodata",
+    "title": "count_PositionSkillMappingEntity_for_sfodata",
+    "description": "Get the total count of entities in the PositionSkillMappingEntity collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionSkillMappingEntity",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_positioncompetencymappings_in_positionentity_for_sfodata",
+    "title": "list_positionCompetencyMappings_in_PositionEntity_for_sfodata",
+    "description": "Navigate from PositionEntity to related PositionCompetencyMappingEntity entities via the 'positionCompetencyMappings' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionCompetencyMappings",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positioncompetencymappings_in_positionentity_for_sfodata",
+    "title": "create_positionCompetencyMappings_in_PositionEntity_for_sfodata",
+    "description": "Create a new PositionCompetencyMappingEntity entity via the 'positionCompetencyMappings' navigation property of PositionEntity. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sfodata tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionCompetencyMappings",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "PositionEntity_externalCode",
+              "newParameterName": "positionentity_externalcode"
+            },
+            {
+              "name": "competency",
+              "newParameterName": "competency"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode_2"
+            },
+            {
+              "name": "rating_de_DE",
+              "newParameterName": "rating_de_de"
+            },
+            {
+              "name": "rating_defaultValue",
+              "newParameterName": "rating_defaultvalue"
+            },
+            {
+              "name": "rating_en_GB",
+              "newParameterName": "rating_en_gb"
+            },
+            {
+              "name": "rating_en_US",
+              "newParameterName": "rating_en_us"
+            },
+            {
+              "name": "rating_es_ES",
+              "newParameterName": "rating_es_es"
+            },
+            {
+              "name": "rating_fr_FR",
+              "newParameterName": "rating_fr_fr"
+            },
+            {
+              "name": "rating_ja_JP",
+              "newParameterName": "rating_ja_jp"
+            },
+            {
+              "name": "rating_ko_KR",
+              "newParameterName": "rating_ko_kr"
+            },
+            {
+              "name": "rating_localized",
+              "newParameterName": "rating_localized"
+            },
+            {
+              "name": "rating_nl_NL",
+              "newParameterName": "rating_nl_nl"
+            },
+            {
+              "name": "rating_pt_BR",
+              "newParameterName": "rating_pt_br"
+            },
+            {
+              "name": "rating_pt_PT",
+              "newParameterName": "rating_pt_pt"
+            },
+            {
+              "name": "rating_ru_RU",
+              "newParameterName": "rating_ru_ru"
+            },
+            {
+              "name": "rating_zh_CN",
+              "newParameterName": "rating_zh_cn"
+            },
+            {
+              "name": "rating_zh_TW",
+              "newParameterName": "rating_zh_tw"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "subModule",
+              "newParameterName": "submodule"
+            },
+            {
+              "name": "weight_de_DE",
+              "newParameterName": "weight_de_de"
+            },
+            {
+              "name": "weight_defaultValue",
+              "newParameterName": "weight_defaultvalue"
+            },
+            {
+              "name": "weight_en_GB",
+              "newParameterName": "weight_en_gb"
+            },
+            {
+              "name": "weight_en_US",
+              "newParameterName": "weight_en_us"
+            },
+            {
+              "name": "weight_es_ES",
+              "newParameterName": "weight_es_es"
+            },
+            {
+              "name": "weight_fr_FR",
+              "newParameterName": "weight_fr_fr"
+            },
+            {
+              "name": "weight_ja_JP",
+              "newParameterName": "weight_ja_jp"
+            },
+            {
+              "name": "weight_ko_KR",
+              "newParameterName": "weight_ko_kr"
+            },
+            {
+              "name": "weight_localized",
+              "newParameterName": "weight_localized"
+            },
+            {
+              "name": "weight_nl_NL",
+              "newParameterName": "weight_nl_nl"
+            },
+            {
+              "name": "weight_pt_BR",
+              "newParameterName": "weight_pt_br"
+            },
+            {
+              "name": "weight_pt_PT",
+              "newParameterName": "weight_pt_pt"
+            },
+            {
+              "name": "weight_ru_RU",
+              "newParameterName": "weight_ru_ru"
+            },
+            {
+              "name": "weight_zh_CN",
+              "newParameterName": "weight_zh_cn"
+            },
+            {
+              "name": "weight_zh_TW",
+              "newParameterName": "weight_zh_tw"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_positioncompetencymappings_in_positionentity_for_sfodata",
+    "title": "count_positionCompetencyMappings_in_PositionEntity_for_sfodata",
+    "description": "Count PositionCompetencyMappingEntity entities accessible via the 'positionCompetencyMappings' navigation property of PositionEntity in the sfodata service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionCompetencyMappings",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_positionnav_in_positionentity_for_sfodata",
+    "title": "list_positionNav_in_PositionEntity_for_sfodata",
+    "description": "Navigate from PositionEntity to related Position entities via the 'positionNav' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionNav",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positionnav_in_positionentity_for_sfodata",
+    "title": "create_positionNav_in_PositionEntity_for_sfodata",
+    "description": "Create a new Position entity via the 'positionNav' navigation property of PositionEntity. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sfodata tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionNav",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "businessUnit",
+              "newParameterName": "businessunit"
+            },
+            {
+              "name": "changeReason",
+              "newParameterName": "changereason"
+            },
+            {
+              "name": "code",
+              "newParameterName": "code"
+            },
+            {
+              "name": "comment",
+              "newParameterName": "comment"
+            },
+            {
+              "name": "company",
+              "newParameterName": "company"
+            },
+            {
+              "name": "costCenter",
+              "newParameterName": "costcenter"
+            },
+            {
+              "name": "department",
+              "newParameterName": "department"
+            },
+            {
+              "name": "description",
+              "newParameterName": "description"
+            },
+            {
+              "name": "division",
+              "newParameterName": "division"
+            },
+            {
+              "name": "effectiveStartDate",
+              "newParameterName": "effectivestartdate"
+            },
+            {
+              "name": "effectiveStatus",
+              "newParameterName": "effectivestatus"
+            },
+            {
+              "name": "employeeClass",
+              "newParameterName": "employeeclass"
+            },
+            {
+              "name": "externalName_de_DE",
+              "newParameterName": "externalname_de_de"
+            },
+            {
+              "name": "externalName_defaultValue",
+              "newParameterName": "externalname_defaultvalue"
+            },
+            {
+              "name": "externalName_en_GB",
+              "newParameterName": "externalname_en_gb"
+            },
+            {
+              "name": "externalName_en_US",
+              "newParameterName": "externalname_en_us"
+            },
+            {
+              "name": "externalName_es_ES",
+              "newParameterName": "externalname_es_es"
+            },
+            {
+              "name": "externalName_fr_FR",
+              "newParameterName": "externalname_fr_fr"
+            },
+            {
+              "name": "externalName_ja_JP",
+              "newParameterName": "externalname_ja_jp"
+            },
+            {
+              "name": "externalName_ko_KR",
+              "newParameterName": "externalname_ko_kr"
+            },
+            {
+              "name": "externalName_localized",
+              "newParameterName": "externalname_localized"
+            },
+            {
+              "name": "externalName_nl_NL",
+              "newParameterName": "externalname_nl_nl"
+            },
+            {
+              "name": "externalName_pt_BR",
+              "newParameterName": "externalname_pt_br"
+            },
+            {
+              "name": "externalName_pt_PT",
+              "newParameterName": "externalname_pt_pt"
+            },
+            {
+              "name": "externalName_ru_RU",
+              "newParameterName": "externalname_ru_ru"
+            },
+            {
+              "name": "externalName_zh_CN",
+              "newParameterName": "externalname_zh_cn"
+            },
+            {
+              "name": "externalName_zh_TW",
+              "newParameterName": "externalname_zh_tw"
+            },
+            {
+              "name": "incumbent",
+              "newParameterName": "incumbent"
+            },
+            {
+              "name": "jobCode",
+              "newParameterName": "jobcode"
+            },
+            {
+              "name": "jobLevel",
+              "newParameterName": "joblevel"
+            },
+            {
+              "name": "jobTitle",
+              "newParameterName": "jobtitle"
+            },
+            {
+              "name": "location",
+              "newParameterName": "location"
+            },
+            {
+              "name": "mdfSystemOptimisticLockUUID",
+              "newParameterName": "mdfsystemoptimisticlockuuid"
+            },
+            {
+              "name": "multipleIncumbentsAllowed",
+              "newParameterName": "multipleincumbentsallowed"
+            },
+            {
+              "name": "payGrade",
+              "newParameterName": "paygrade"
+            },
+            {
+              "name": "positionCriticality",
+              "newParameterName": "positioncriticality"
+            },
+            {
+              "name": "positionTitle",
+              "newParameterName": "positiontitle"
+            },
+            {
+              "name": "regularTemporary",
+              "newParameterName": "regulartemporary"
+            },
+            {
+              "name": "targetFTE",
+              "newParameterName": "targetfte"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "vacant",
+              "newParameterName": "vacant"
+            },
+            {
+              "name": "parentPosition",
+              "newParameterName": "parentposition"
+            },
+            {
+              "name": "positionMatrixRelationship",
+              "newParameterName": "positionmatrixrelationship"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_positionnav_in_positionentity_for_sfodata",
+    "title": "count_positionNav_in_PositionEntity_for_sfodata",
+    "description": "Count Position entities accessible via the 'positionNav' navigation property of PositionEntity in the sfodata service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionNav",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_positionskillmappings_in_positionentity_for_sfodata",
+    "title": "list_positionSkillMappings_in_PositionEntity_for_sfodata",
+    "description": "Navigate from PositionEntity to related PositionSkillMappingEntity entities via the 'positionSkillMappings' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionSkillMappings",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positionskillmappings_in_positionentity_for_sfodata",
+    "title": "create_positionSkillMappings_in_PositionEntity_for_sfodata",
+    "description": "Create a new PositionSkillMappingEntity entity via the 'positionSkillMappings' navigation property of PositionEntity. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sfodata tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionSkillMappings",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "PositionEntity_externalCode",
+              "newParameterName": "positionentity_externalcode"
+            },
+            {
+              "name": "externalCode",
+              "newParameterName": "externalcode_2"
+            },
+            {
+              "name": "proLevel_de_DE",
+              "newParameterName": "prolevel_de_de"
+            },
+            {
+              "name": "proLevel_defaultValue",
+              "newParameterName": "prolevel_defaultvalue"
+            },
+            {
+              "name": "proLevel_en_GB",
+              "newParameterName": "prolevel_en_gb"
+            },
+            {
+              "name": "proLevel_en_US",
+              "newParameterName": "prolevel_en_us"
+            },
+            {
+              "name": "proLevel_es_ES",
+              "newParameterName": "prolevel_es_es"
+            },
+            {
+              "name": "proLevel_fr_FR",
+              "newParameterName": "prolevel_fr_fr"
+            },
+            {
+              "name": "proLevel_ja_JP",
+              "newParameterName": "prolevel_ja_jp"
+            },
+            {
+              "name": "proLevel_ko_KR",
+              "newParameterName": "prolevel_ko_kr"
+            },
+            {
+              "name": "proLevel_localized",
+              "newParameterName": "prolevel_localized"
+            },
+            {
+              "name": "proLevel_nl_NL",
+              "newParameterName": "prolevel_nl_nl"
+            },
+            {
+              "name": "proLevel_pt_BR",
+              "newParameterName": "prolevel_pt_br"
+            },
+            {
+              "name": "proLevel_pt_PT",
+              "newParameterName": "prolevel_pt_pt"
+            },
+            {
+              "name": "proLevel_ru_RU",
+              "newParameterName": "prolevel_ru_ru"
+            },
+            {
+              "name": "proLevel_zh_CN",
+              "newParameterName": "prolevel_zh_cn"
+            },
+            {
+              "name": "proLevel_zh_TW",
+              "newParameterName": "prolevel_zh_tw"
+            },
+            {
+              "name": "skill",
+              "newParameterName": "skill"
+            },
+            {
+              "name": "status",
+              "newParameterName": "status"
+            },
+            {
+              "name": "subModule",
+              "newParameterName": "submodule"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_positionskillmappings_in_positionentity_for_sfodata",
+    "title": "count_positionSkillMappings_in_PositionEntity_for_sfodata",
+    "description": "Count PositionSkillMappingEntity entities accessible via the 'positionSkillMappings' navigation property of PositionEntity in the sfodata service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionEntity",
+        "navigationProperty": {
+          "name": "positionSkillMappings",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "externalCode",
+            "newParameterName": "externalcode"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list",
+    "title": "list_relatedPositionNav_in_PositionMatrixRelationship_for_sfodata",
+    "description": "Navigate from PositionMatrixRelationship to related Position entities via the 'relatedPositionNav' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "navigationProperty": {
+          "name": "relatedPositionNav",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Position_code",
+            "newParameterName": "position_code"
+          },
+          {
+            "name": "Position_effectiveStartDate",
+            "newParameterName": "position_effectivestartdate"
+          },
+          {
+            "name": "matrixRelationshipType",
+            "newParameterName": "matrixrelationshiptype"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create",
+    "title": "create_relatedPositionNav_in_PositionMatrixRelationship_for_sfodata",
+    "description": "Create a new Position entity via the 'relatedPositionNav' navigation property of PositionMatrixRelationship. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sfodata tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "navigationProperty": {
+          "name": "relatedPositionNav",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "businessUnit",
+              "newParameterName": "businessunit"
+            },
+            {
+              "name": "changeReason",
+              "newParameterName": "changereason"
+            },
+            {
+              "name": "code",
+              "newParameterName": "code"
+            },
+            {
+              "name": "comment",
+              "newParameterName": "comment"
+            },
+            {
+              "name": "company",
+              "newParameterName": "company"
+            },
+            {
+              "name": "costCenter",
+              "newParameterName": "costcenter"
+            },
+            {
+              "name": "department",
+              "newParameterName": "department"
+            },
+            {
+              "name": "description",
+              "newParameterName": "description"
+            },
+            {
+              "name": "division",
+              "newParameterName": "division"
+            },
+            {
+              "name": "effectiveStartDate",
+              "newParameterName": "effectivestartdate"
+            },
+            {
+              "name": "effectiveStatus",
+              "newParameterName": "effectivestatus"
+            },
+            {
+              "name": "employeeClass",
+              "newParameterName": "employeeclass"
+            },
+            {
+              "name": "externalName_de_DE",
+              "newParameterName": "externalname_de_de"
+            },
+            {
+              "name": "externalName_defaultValue",
+              "newParameterName": "externalname_defaultvalue"
+            },
+            {
+              "name": "externalName_en_GB",
+              "newParameterName": "externalname_en_gb"
+            },
+            {
+              "name": "externalName_en_US",
+              "newParameterName": "externalname_en_us"
+            },
+            {
+              "name": "externalName_es_ES",
+              "newParameterName": "externalname_es_es"
+            },
+            {
+              "name": "externalName_fr_FR",
+              "newParameterName": "externalname_fr_fr"
+            },
+            {
+              "name": "externalName_ja_JP",
+              "newParameterName": "externalname_ja_jp"
+            },
+            {
+              "name": "externalName_ko_KR",
+              "newParameterName": "externalname_ko_kr"
+            },
+            {
+              "name": "externalName_localized",
+              "newParameterName": "externalname_localized"
+            },
+            {
+              "name": "externalName_nl_NL",
+              "newParameterName": "externalname_nl_nl"
+            },
+            {
+              "name": "externalName_pt_BR",
+              "newParameterName": "externalname_pt_br"
+            },
+            {
+              "name": "externalName_pt_PT",
+              "newParameterName": "externalname_pt_pt"
+            },
+            {
+              "name": "externalName_ru_RU",
+              "newParameterName": "externalname_ru_ru"
+            },
+            {
+              "name": "externalName_zh_CN",
+              "newParameterName": "externalname_zh_cn"
+            },
+            {
+              "name": "externalName_zh_TW",
+              "newParameterName": "externalname_zh_tw"
+            },
+            {
+              "name": "incumbent",
+              "newParameterName": "incumbent"
+            },
+            {
+              "name": "jobCode",
+              "newParameterName": "jobcode"
+            },
+            {
+              "name": "jobLevel",
+              "newParameterName": "joblevel"
+            },
+            {
+              "name": "jobTitle",
+              "newParameterName": "jobtitle"
+            },
+            {
+              "name": "location",
+              "newParameterName": "location"
+            },
+            {
+              "name": "mdfSystemOptimisticLockUUID",
+              "newParameterName": "mdfsystemoptimisticlockuuid"
+            },
+            {
+              "name": "multipleIncumbentsAllowed",
+              "newParameterName": "multipleincumbentsallowed"
+            },
+            {
+              "name": "payGrade",
+              "newParameterName": "paygrade"
+            },
+            {
+              "name": "positionCriticality",
+              "newParameterName": "positioncriticality"
+            },
+            {
+              "name": "positionTitle",
+              "newParameterName": "positiontitle"
+            },
+            {
+              "name": "regularTemporary",
+              "newParameterName": "regulartemporary"
+            },
+            {
+              "name": "targetFTE",
+              "newParameterName": "targetfte"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "vacant",
+              "newParameterName": "vacant"
+            },
+            {
+              "name": "parentPosition",
+              "newParameterName": "parentposition"
+            },
+            {
+              "name": "positionMatrixRelationship",
+              "newParameterName": "positionmatrixrelationship"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Position_code",
+            "newParameterName": "position_code"
+          },
+          {
+            "name": "Position_effectiveStartDate",
+            "newParameterName": "position_effectivestartdate"
+          },
+          {
+            "name": "matrixRelationshipType",
+            "newParameterName": "matrixrelationshiptype"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count",
+    "title": "count_relatedPositionNav_in_PositionMatrixRelationship_for_sfodata",
+    "description": "Count Position entities accessible via the 'relatedPositionNav' navigation property of PositionMatrixRelationship in the sfodata service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "PositionMatrixRelationship",
+        "navigationProperty": {
+          "name": "relatedPositionNav",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Position_code",
+            "newParameterName": "position_code"
+          },
+          {
+            "name": "Position_effectiveStartDate",
+            "newParameterName": "position_effectivestartdate"
+          },
+          {
+            "name": "matrixRelationshipType",
+            "newParameterName": "matrixrelationshiptype"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_parentposition_in_position_for_sfodata",
+    "title": "get_parentPosition_in_Position_for_sfodata",
+    "description": "Navigate from Position to the related Position entity via the 'parentPosition' navigation property. Supports $select and $expand query options. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "navigationProperty": {
+          "name": "parentPosition",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "update_parentposition_in_position_for_sfodata",
+    "title": "update_parentPosition_in_Position_for_sfodata",
+    "description": "Update the Position entity navigated from Position via the 'parentPosition' navigation property (HTTP PATCH). Provide the parent key and the properties to update. If the structure is unknown, call get_metadata_sfodata tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "navigationProperty": {
+          "name": "parentPosition",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "businessUnit",
+              "newParameterName": "businessunit"
+            },
+            {
+              "name": "changeReason",
+              "newParameterName": "changereason"
+            },
+            {
+              "name": "comment",
+              "newParameterName": "comment"
+            },
+            {
+              "name": "company",
+              "newParameterName": "company"
+            },
+            {
+              "name": "costCenter",
+              "newParameterName": "costcenter"
+            },
+            {
+              "name": "department",
+              "newParameterName": "department"
+            },
+            {
+              "name": "description",
+              "newParameterName": "description"
+            },
+            {
+              "name": "division",
+              "newParameterName": "division"
+            },
+            {
+              "name": "effectiveStatus",
+              "newParameterName": "effectivestatus"
+            },
+            {
+              "name": "employeeClass",
+              "newParameterName": "employeeclass"
+            },
+            {
+              "name": "externalName_de_DE",
+              "newParameterName": "externalname_de_de"
+            },
+            {
+              "name": "externalName_defaultValue",
+              "newParameterName": "externalname_defaultvalue"
+            },
+            {
+              "name": "externalName_en_GB",
+              "newParameterName": "externalname_en_gb"
+            },
+            {
+              "name": "externalName_en_US",
+              "newParameterName": "externalname_en_us"
+            },
+            {
+              "name": "externalName_es_ES",
+              "newParameterName": "externalname_es_es"
+            },
+            {
+              "name": "externalName_fr_FR",
+              "newParameterName": "externalname_fr_fr"
+            },
+            {
+              "name": "externalName_ja_JP",
+              "newParameterName": "externalname_ja_jp"
+            },
+            {
+              "name": "externalName_ko_KR",
+              "newParameterName": "externalname_ko_kr"
+            },
+            {
+              "name": "externalName_localized",
+              "newParameterName": "externalname_localized"
+            },
+            {
+              "name": "externalName_nl_NL",
+              "newParameterName": "externalname_nl_nl"
+            },
+            {
+              "name": "externalName_pt_BR",
+              "newParameterName": "externalname_pt_br"
+            },
+            {
+              "name": "externalName_pt_PT",
+              "newParameterName": "externalname_pt_pt"
+            },
+            {
+              "name": "externalName_ru_RU",
+              "newParameterName": "externalname_ru_ru"
+            },
+            {
+              "name": "externalName_zh_CN",
+              "newParameterName": "externalname_zh_cn"
+            },
+            {
+              "name": "externalName_zh_TW",
+              "newParameterName": "externalname_zh_tw"
+            },
+            {
+              "name": "incumbent",
+              "newParameterName": "incumbent"
+            },
+            {
+              "name": "jobCode",
+              "newParameterName": "jobcode"
+            },
+            {
+              "name": "jobLevel",
+              "newParameterName": "joblevel"
+            },
+            {
+              "name": "jobTitle",
+              "newParameterName": "jobtitle"
+            },
+            {
+              "name": "location",
+              "newParameterName": "location"
+            },
+            {
+              "name": "mdfSystemOptimisticLockUUID",
+              "newParameterName": "mdfsystemoptimisticlockuuid"
+            },
+            {
+              "name": "multipleIncumbentsAllowed",
+              "newParameterName": "multipleincumbentsallowed"
+            },
+            {
+              "name": "payGrade",
+              "newParameterName": "paygrade"
+            },
+            {
+              "name": "positionCriticality",
+              "newParameterName": "positioncriticality"
+            },
+            {
+              "name": "positionTitle",
+              "newParameterName": "positiontitle"
+            },
+            {
+              "name": "regularTemporary",
+              "newParameterName": "regulartemporary"
+            },
+            {
+              "name": "targetFTE",
+              "newParameterName": "targetfte"
+            },
+            {
+              "name": "type",
+              "newParameterName": "type"
+            },
+            {
+              "name": "vacant",
+              "newParameterName": "vacant"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "list_positionmatrixrelationship_in_position_for_sfodata",
+    "title": "list_positionMatrixRelationship_in_Position_for_sfodata",
+    "description": "Navigate from Position to related PositionMatrixRelationship entities via the 'positionMatrixRelationship' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "navigationProperty": {
+          "name": "positionMatrixRelationship",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_positionmatrixrelationship_in_position_for_sfodata",
+    "title": "create_positionMatrixRelationship_in_Position_for_sfodata",
+    "description": "Create a new PositionMatrixRelationship entity via the 'positionMatrixRelationship' navigation property of Position. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sfodata tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "navigationProperty": {
+          "name": "positionMatrixRelationship",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "Position_code",
+              "newParameterName": "position_code"
+            },
+            {
+              "name": "Position_effectiveStartDate",
+              "newParameterName": "position_effectivestartdate"
+            },
+            {
+              "name": "matrixRelationshipType",
+              "newParameterName": "matrixrelationshiptype"
+            },
+            {
+              "name": "relatedPosition",
+              "newParameterName": "relatedposition"
+            },
+            {
+              "name": "relatedPositionNav",
+              "newParameterName": "relatedpositionnav"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "content-id"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_positionmatrixrelationship_in_position_for_sfodata",
+    "title": "count_positionMatrixRelationship_in_Position_for_sfodata",
+    "description": "Count PositionMatrixRelationship entities accessible via the 'positionMatrixRelationship' navigation property of Position in the sfodata service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "Position",
+        "navigationProperty": {
+          "name": "positionMatrixRelationship",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "code",
+            "newParameterName": "code"
+          },
+          {
+            "name": "effectiveStartDate",
+            "newParameterName": "effectivestartdate"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "function_getpositionobjectdata_for_sfodata",
+    "title": "function_getPositionObjectData_for_sfodata",
+    "description": "OData function: getPositionObjectData in the sfodata service. Returns: SFOData.RuleFieldMappingBeanList",
+    "odataType": {
+      "operation": {
+        "name": "getPositionObjectData",
+        "type": "function",
+        "parameters": [
+          {
+            "name": "positionId",
+            "newParameterName": "positionid"
+          },
+          {
+            "name": "userId",
+            "newParameterName": "userid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "dataserviceversion"
+        },
+        {
+          "name": "sap-message"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  }
+]
